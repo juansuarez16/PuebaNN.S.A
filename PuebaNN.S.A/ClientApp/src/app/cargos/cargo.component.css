@@ -1,0 +1,24 @@
+/* cargo.component.css */
+
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Estilos para los botones */
+  .button-container {
+    margin-top: 20px;
+  }
+  
+  .button-container button {
+    margin-right: 10px;
+  }
+  

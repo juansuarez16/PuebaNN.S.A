@@ -1,0 +1,31 @@
+<div class="container">
+    <h2>Listado de Cargos</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <!-- Otros campos del cargo según tus necesidades -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cargo of cargos">
+          <td>{{ cargo.id }}</td>
+          <td>{{ cargo.nombre }}</td>
+          <!-- Aquí puedes mostrar otros campos del cargo -->
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Formulario para agregar un nuevo cargo -->
+    <h3>Agregar Nuevo Cargo</h3>
+    <form (submit)="crearCargo()">
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" class="form-control" id="nombre" [(ngModel)]="nuevoCargo.nombre" name="nombre" required>
+      </div>
+      <!-- Otros campos del formulario según los atributos del modelo Cargo -->
+      <button type="submit" class="btn btn-primary">Crear Cargo</button>
+    </form>
+  </div>
+  

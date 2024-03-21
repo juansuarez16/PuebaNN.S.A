@@ -1,0 +1,41 @@
+<form (ngSubmit)="crearEmpleado()" #formularioEmpleado="ngForm">
+    <div class="form-group">
+      <label for="cedula">Cédula:</label>
+      <input type="number" class="form-control" id="cedula" name="cedula" [(ngModel)]="nuevaSolicitud.empleado.cedula" required>
+    </div>
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="nuevaSolicitud.empleado.nombre" required>
+    </div>
+    <div class="form-group">
+      <label for="rutaFoto">Foto:</label>
+      <input type="text" class="form-control" id="rutaFoto" name="rutaFoto" [(ngModel)]="nuevaSolicitud.empleado.rutaFoto" required>
+    </div>    
+    <div class="form-group">
+      <label for="fechaIngreso">Fecha de Ingreso:</label>
+      <input type="datetime-local" class="form-control" id="fechaIngreso" name="fechaIngreso" [(ngModel)]="nuevaSolicitud.empleado.fechaIngreso" required>
+    </div>
+    <div class="form-group">
+      <label for="cargoId">Cargo:</label>
+      <select class="form-control" id="cargoId" name="cargoId" [(ngModel)]="nuevaSolicitud.empleado.cargoId" required>
+        <option *ngFor="let cargo of cargos" [value]="cargo.id">{{ cargo.nombre }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="usuario">Usuario:</label>
+      <input type="text" class="form-control" id="usuario" name="usuario" [(ngModel)]="nuevaSolicitud.usuario.usuario" required>
+    </div>
+    <div class="form-group">
+      <label for="contrasena">Contraseña:</label>
+      <input type="password" class="form-control" id="contrasena" name="contrasena" [(ngModel)]="nuevaSolicitud.usuario.contrasena" required>
+    </div>
+    <div class="form-group">
+      <label for="rolId">Rol:</label>
+      <select class="form-control" id="rol" name="rol" [(ngModel)]="nuevaSolicitud.rol" required>
+        <option *ngFor="let rol of roles" [value]="rol.id">{{ rol.rolName }}</option>
+      </select>
+    </div>
+    <button class="btn btn-primary" (click)="volver()">Volver</button>
+    <button type="submit" class="btn btn-primary">Crear Empleado</button>
+  </form>
+  
